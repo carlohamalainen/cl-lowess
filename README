@@ -1,0 +1,18 @@
+This is a stand-alone rip of the lowess.c file from the common-lisp-stat project:
+https://github.com/blindglobe/common-lisp-stat/blob/master/lib/lowess.c
+It implements the LOWESS algorithm of W. S. Cleveland as obtained from NETLIB.
+
+My contribution is solely the Common Lisp wrapper and a few minor edits to make 
+it work in a stand-alone manner.
+
+To compile the C file:
+
+    make
+
+To run the test script (assumes that you have Python and matplotlib installed):
+
+    sbcl  --noinform --load test-lowess.lisp | python
+
+Example output is in example-output-from-test-script.png.
+
+Author: Carlo Hamalainen (2011) 
