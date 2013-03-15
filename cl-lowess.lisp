@@ -32,9 +32,10 @@
           (c-ys     (foreign-alloc :double :count n))
           (c-rw     (foreign-alloc :double :count n))
           (c-res    (foreign-alloc :double :count n))
-          (f        (coerce 0.25 'double-float))
+          (f        (coerce 0.66 'double-float))
           (nsteps   3)
-          (delta    (coerce 0.3  'double-float)))
+          (delta    (coerce (* 0.01 (aref y (- (length y) 1)))
+			    'double-float))) ;; (coerce 0.3  'double-float)))
      (loop for i :below n do
            (setf (mem-aref c-x :double i) (coerce (aref x i) 'double-float))
            (setf (mem-aref c-y :double i) (coerce (aref y i) 'double-float)))
